@@ -1,4 +1,4 @@
-// Controllers - where we define behavior by defining functions and values.
+ // Controllers - where we define behavior by defining functions and values.
 // Wrapping JavaScript in a closure
 (function() {
 	// Module	Angular JS     App Name Dependencies
