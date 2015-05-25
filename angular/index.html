@@ -6,12 +6,15 @@
 </head>
 <!-- Directive and name of function being called -->
 <body>
+	<!-- Directive		  Controller Name    Alias -->
+	<div ng-controller="StoreController as store">
+		<h1>{{store.product.name}}</h1>
+		<h2>${{store.product.price}}</h2>
+		<p>{{store.product.description}}</p>
+	</div>
+
+	<!-- Scripts -->
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
-	<h1>Welcome</h1>
-
-	<!-- Expression -->
-	<p>I am {{4+6}}</p>
-	<p>{{"hello" + " you"}}</p>
 </body>
 </html>
