@@ -7,12 +7,23 @@
 	// Pass an anonymous function 
 	app.controller('StoreController', function() {
 		// Set property of controller to gem
-		this.product = gem;
+		this.products = gems;
 	});
 	// JS object
-	var gem = {
-		name: 'Dodecahedron',
-		price: 2.95,
-		description: '. . .',
-	}
+	var gems = [
+		{
+			name: 'Dodecahedron',
+			price: 2.95,
+			description: '. . .',
+			canPurchase: true,
+			soldOut: false, // if sold out, don't show product on page, duh.
+		},
+		{
+			name: 'Pentagonal Gem',
+			price: 5.95,
+			description: '. . .',
+			canPurchase: true,
+			soldOut: false,
+		}
+	];
 })();
