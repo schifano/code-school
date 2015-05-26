@@ -1,14 +1,27 @@
- // Controllers - where we define behavior by defining functions and values.
+// Controllers - where we define behavior by defining functions and values.
 // Wrapping JavaScript in a closure
 (function() {
 	// Module	Angular JS     App Name Dependencies
-	var app = angular.module('store', []);
+	var app = angular.module('store', ['store-products']);
 	// Create controller, always name with uppercase
 	// Pass an anonymous function 
 	app.controller('StoreController', function() {
 		// Set property of controller to gem
 		this.products = gems;
 	});
+
+	app.controller('ReviewController', function() {
+		// Initialize review arrray
+		this.review = {};
+
+		this.addReview = function(product) {
+			// push the controller's review onto the review array
+			product.reviews.push(this.review);
+			// reset review fields
+			this.review = {};
+		};
+	}); // end ReviewController
+
 	// JS object
 	var gems = [
 		{
@@ -50,29 +63,4 @@
 			soldOut: false,
 		}
 	];
-
-	app.controller('PanelController', function() {
-		// Initialize panel
-		this.tab = 1;
-		// Function expression
-		this.selectTab = function(setTab) {
-			this.tab = setTab;
-		};
-		// Check which tab is selected
-		this.isSelected = function(checkTab) {
-			return this.tab === checkTab;
-		};
-	}); // end PanelController
-
-	app.controller('ReviewController', function() {
-		// Initialize review arrray
-		this.review = {};
-
-		this.addReview = function(product) {
-			// push the controller's review onto the review array
-			product.reviews.push(this.review);
-			// reset review fields
-			this.review = {};
-		};
-	}); // end ReviewController
-})();
+})(); // end JS function
