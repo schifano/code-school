@@ -43,6 +43,11 @@
 							<cite>by: {{review.author}}</cite>
 						</blockquote>
 						<form name="reviewForm"> <!-- start review form -->
+							<blockquote>
+							<b>Stars: {{review.stars}}</b>
+							<p>{{review.body}}</p>
+							<cite>by: {{review.author}}</cite>
+							</blockquote>
 							<select ng-model="review.stars">
 								<option value="1">1 star</option>
 								<option value="2">2 stars</option>
@@ -52,7 +57,7 @@
 							</select>
 							<textarea ng-model="review.body"></textarea>
 							<label>by:</label>
-							<input type="email" ng-model="review.author">
+							<input ng-model="review.author" type="email" >
 							<input type="submit" value="Submit">
 						</form> <!-- end review form -->
 					</div>
