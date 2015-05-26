@@ -3,6 +3,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" style="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" style="text/css" href="style.css">
 </head>
 <!-- Directive and name of function being called -->
 <body ng-controller="StoreController as store">
@@ -44,22 +45,23 @@
 						</blockquote>
 						<!-- start review form -->
 						<form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
-																		ng-submit="reviewCtrl.addReview(product)">
+																		ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 							<blockquote>
 							<b>Stars: {{reviewCtrl.review.stars}}</b>
 							<p>{{reviewCtrl.review.body}}</p>
 							<cite>by: {{reviewCtrl.review.author}}</cite>
 							</blockquote>
-							<select ng-model="reviewCtrl.review.stars">
+							<select ng-model="reviewCtrl.review.stars" required>
 								<option value="1">1 star</option>
 								<option value="2">2 stars</option>
 								<option value="3">3 stars</option>
 								<option value="4">4 stars</option>
 								<option value="5">5 stars</option>
 							</select>
-							<textarea ng-model="reviewCtrl.review.body"></textarea>
+							<textarea ng-model="reviewCtrl.review.body" required></textarea>
 							<label>by:</label>
-							<input ng-model="reviewCtrl.review.author" type="email" >
+							<input ng-model="reviewCtrl.review.author" type="email" required>
+							<div>reviewForm is {{reviewForm.$valid}}</div>
 							<input type="submit" value="Submit">
 						</form>
 						<!-- end review form -->
