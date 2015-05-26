@@ -19,6 +19,18 @@
 					thumb: 'images/dodecahedron-thumb.png'
 				}
 			],
+			reviews: [
+				{
+					stars: 5,
+					body: 'I love this product!',
+					author: 'bear@beary.net'
+				},
+				{
+					stars: 1,
+					body: 'This product sucks.',
+					author: 'ooni@corn.com'
+				}
+			],
 			price: 2,
 			description: '. . .',
 			canPurchase: true,
@@ -38,4 +50,17 @@
 			soldOut: false,
 		}
 	];
+
+	app.controller('PanelController', function() {
+		// Initialize panel
+		this.tab = 1;
+		// Function expression
+		this.selectTab = function(setTab) {
+			this.tab = setTab;
+		};
+		// Check which tab is selected
+		this.isSelected = function(checkTab) {
+			return this.tab === checkTab;
+		};
+	});
 })();
