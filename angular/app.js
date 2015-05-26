@@ -62,5 +62,17 @@
 		this.isSelected = function(checkTab) {
 			return this.tab === checkTab;
 		};
-	});
+	}); // end PanelController
+
+	app.controller('ReviewController', function() {
+		// Initialize review arrray
+		this.review = {};
+
+		this.addReview = function(product) {
+			// push the controller's review onto the review array
+			product.reviews.push(this.review);
+			// reset review fields
+			this.review = {};
+		};
+	}); // end ReviewController
 })();
