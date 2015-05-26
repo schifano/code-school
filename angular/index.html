@@ -6,13 +6,22 @@
 </head>
 <!-- Directive and name of function being called -->
 <body ng-controller="StoreController as store">
-	<!-- Directive		  Controller Name    Alias -->
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="product in store.products">
+			<h3>{{product.name}}
+					<em class="pull-right">{{product.price | currency}}</em>
+					<img ng-src="{{product.images[0].full}}">
+			</h3>
+		</li>
+	</ul>	
+
+	<!-- 
 	<div ng-hide="store.product.soldOut" ng-repeat="product in store.products">
 		<h1>{{product.name}}</h1>
 		<h2>${{product.price}}</h2>
 		<p>{{product.description}}</p>
 		<button ng-show="store.product.canPurchase">Add to cart</button>
-	</div>
+	</div> -->
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="angular.min.js"></script>

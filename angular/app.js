@@ -13,13 +13,25 @@
 	var gems = [
 		{
 			name: 'Dodecahedron',
-			price: 2.95,
+			images: [
+				{
+					full: 'images/dodecahedron-full.png',
+					thumb: 'images/dodecahedron-thumb.png'
+				}
+			],
+			price: 2,
 			description: '. . .',
 			canPurchase: true,
 			soldOut: false, // if sold out, don't show product on page, duh.
 		},
 		{
 			name: 'Pentagonal Gem',
+			images: [
+				{
+					full: 'images/pentagonal-full.png',
+					thumb: 'images/pentagonal-thumb.png'
+				}
+			],
 			price: 5.95,
 			description: '. . .',
 			canPurchase: true,
