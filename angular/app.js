@@ -10,6 +10,16 @@
 		this.products = gems;
 	});
 
+	// Services
+	// app.controller('StoreController', ['$http', function($http) {
+	// 	// Set property of controller to gem
+	// 	var store = this;
+	// 	store.products = [];
+	// 	$http.get('/products.json').success(function(data) {
+	// 		store.products = data;
+	// 	});
+	// }]);
+
 	app.controller('ReviewController', function() {
 		// Initialize review arrray
 		this.review = {};
